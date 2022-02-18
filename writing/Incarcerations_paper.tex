@@ -1,0 +1,62 @@
+\documentclass{article}
+
+% these packages let you do math
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% we need these packages for fancy R tables
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% these packages play with the spacing/margins of the document. Uncomment the commands on lines 16 and 17 to see what they do.
+\usepackage{a4wide}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{parskip}
+%\doublespacing
+%\geometry{margin=1.5in}
+
+% this package helps us with including images. Setting the graphics path makes it easier to refer to things in the \includegraphics command.
+\usepackage{graphicx}
+\graphicspath{ {C:/Users/60495/Desktop/Casual/Hidden/causal-hidden/figures} }
+
+% make some hyperlinks using the \href command
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+% set the author, title, and date of the document. \maketitle adds it to the document.
+\author{Liming Pang}
+\title{My Paper on NLSY97 Data}
+\date{Spring 2022}
+
+\begin{document}
+\maketitle
+
+\section{Data Introduction}
+
+This data shows the number of incarcerated people in the United States in 2002. I sorted out the data according to gender and race in order to better present figure and tables.
+
+\section{Figure}
+Figure \ref{fig:graph} exhibits that the mean number of incarcerations in 2002 by Race and Gender. We can learn from the graph that the number of women incarcerated is much lower than that of men, except for the lack of data on mixed races. At the same time, black men are incarcerated at a much higher rate than other races.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.75\textwidth]{incarcerations_by_racegender}
+    \end{center}
+    \caption{Mean Number of incarcerations in 2002 by Race and Gender}
+    \label{fig:graph}
+\end{figure}
+
+\section{Tables}
+The information shows from Table 1 is similar with Figure 1. It exhibits the exact number. It exhibits specific numbers that give us a more precise understanding of the differences between races.
+\input{incarcerations_by_racegender.tex}
+Table 2 from the regression model. It shows the relationship between the Black Female and the other variables. Except for black men, the correlation of others is negative. However, the R square of this model is too small, which indicates that  independent variable is not explaining much in the variation of dependent variables
+\input{regress_incarcerations_by_racegender.tex}
+
+\end{document}
